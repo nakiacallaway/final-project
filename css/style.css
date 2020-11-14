@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  }
+a:link {
+  color: #fff;
+}
+a:visited {
+  color: #fff;
+}
+a:hover {
+  color: #ff0;
+}
+
+.logo {
+  height: 50px;
+  float: left;
+}
+nav {
+  height: 50px;
+  background-color: #00f
+  }
+  
+ 
