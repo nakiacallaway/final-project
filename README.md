@@ -21,3 +21,4 @@ Thank you Crystal & Johny
 ### A changelog (usually for programmers)
 Nov 13, 2020 - Created repo, added readme, updated readme with all this cool stuff.
 Nov 13, 2020 - Added index, about, scheduling, & contact pages.  Began work on nav bar.
+Nov 16, 2020 - Uploaded nav bar base design, header integration with font awesome and google fonts.
