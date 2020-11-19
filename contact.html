@@ -17,6 +17,23 @@
                 <a class="navlink" href="contact.html" target="_blank">Contact</a>
             </div>  
         </nav>
-         
+        <form action="/action_page.php">
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="tel">Phone:</label>
+            <input type="tel" id="tel" name="tel"><br><br>
+            
+              <label for="intrest">Area of interest</label>
+              <select id="interest" name="interest">
+                <option value="sun">Solar power</option>
+                <option value="siri">Home automation</option>
+                <option value="skynet">Skynet my shit up!</option>
+              </select><br><br>
+            <input type="submit" value="Submit">
+          </form> 
     </body>  
 </html>
