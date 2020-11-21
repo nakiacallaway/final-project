@@ -113,14 +113,7 @@ form {
   padding: 10px;
   font-family: "Roboto", sans-serif;
 }
-/*
-label{
-  display: inline-block;
-  float: left;
-  clear: left;
-  width: 200px;
-  text-align: left; Change to right here if you want it close to the inputs
-}*/
+
 input {
   display: inline-block;
   float: right;
@@ -133,6 +126,7 @@ select {
   display: inline-block;
   float: left;
 }
+/*----------------pick up here---------------*/
 
 .button {
   border: none;
