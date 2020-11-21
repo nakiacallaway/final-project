@@ -14,10 +14,9 @@ a:hover {
   color: #ff0;
 }
 h1 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 20px;
-  font-family: roberto, lato;
-  color: #0000ff
+  color: #0000ff;
 }
 
 i {
@@ -86,20 +85,22 @@ nav {
   padding-top: 20px;
  }
 
+ .schtxt {
+   width: 40%;
+   padding: 45px;
+   font-family: "Roboto", sans-serif;
+ }
+
 .schtxtlg2{
   text-align: center;
-  color: #0000ff;
   font-style: bold;
   font-size: 30px;
-  margin: 50px;
+  margin: auto;
 }
-.schtxtsm {
-  text-align: center;
-  color: #0000ff;
-  width: 40%
-  }
+
 .schtxtsm2 {
-  margin: 55px;
+  text-align: center;
+  margin: auto;
   font-size: 18px;
 }
 .video {
@@ -110,6 +111,7 @@ iframe {
 }
 form {
   padding: 20px;
+  font-family: "Roboto", sans-serif;
 }
 .button {
   border: none;
@@ -147,6 +149,7 @@ form {
 .exptxt {
   width: 28%;
   float: left;
+  font-family: "Roboto", sans-serif;
 }
 .map {
   width: 30%;
@@ -159,26 +162,27 @@ form {
 }
 .imgab {
   float: left;
+  width: 19%;
   padding-top: 10px;
   padding-right: 2%;
 }
 .abouttxt {
   padding-top: 10px;
-  }
+
+}
 
 .abtxtlg {
   text-align: center;
-  color: #0000ff;
+
   font-weight: bolder;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 30px;
-  color: #0000ff
-  
+
 }
+
 .abtxtsm {
   text-align: center;
-  color: #0000ff;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   width: 60%;
   padding: 0px 5% 10px 5%;
-  }
+}
