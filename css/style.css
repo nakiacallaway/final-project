@@ -110,9 +110,30 @@ iframe {
   padding: 30px;
 }
 form {
-  padding: 20px;
+  padding: 10px;
   font-family: "Roboto", sans-serif;
 }
+/*
+label{
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 200px;
+  text-align: left; Change to right here if you want it close to the inputs
+}*/
+input {
+  display: inline-block;
+  float: right;
+}
+select {
+  display: inline-block;
+  float: right;
+}
+.sub-but {
+  display: inline-block;
+  float: left;
+}
+
 .button {
   border: none;
   color: white;
@@ -125,8 +146,7 @@ form {
   transition-duration: 0.1s;
   cursor: pointer;
   margin-top: 4px;
-}
-
+  }
 .button {
   background-color: white; 
   color: black; 
