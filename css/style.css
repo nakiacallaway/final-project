@@ -65,7 +65,7 @@ nav {
 }
 
 .days {
-  padding: 10px 0;
+  padding: 10px;
   background: #eee;
   margin: 0;
 }
@@ -73,17 +73,17 @@ nav {
 .days li {
   list-style-type: none;
   display: inline-block;
-  width: 13%;
+  width: 23%;
   text-align: center;
   margin-bottom: 28px;
-  font-size:12px;
-  color: #777;
+  font-size:55px;
+  color: #555;
 }
 
 .calwh {
   width: 60%;
   float: right;
-  padding: 20px;
+  padding-top: 20px;
  }
 
 .schtxtlg2{
@@ -108,3 +108,77 @@ nav {
 iframe {
   padding: 30px;
 }
+form {
+  padding: 20px;
+}
+.button {
+  border: none;
+  color: white;
+  width: 13.4%;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.1s;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.button {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #00f;
+}
+
+.button:hover {
+  background-color: #00f;
+  color: white;
+}
+
+.button2:hover {
+  background-color: #555;
+  color: #f00;
+}
+.subform {
+  width: 28%;
+  float: left;
+}
+.exptxt {
+  width: 28%;
+  float: left;
+}
+.map {
+  width: 30%;
+  float: left;
+}
+.pool {
+  float: right;
+  width: 40%;
+  padding-top: 10px;
+}
+.imgab {
+  float: left;
+  padding-top: 10px;
+  padding-right: 2%;
+}
+.abouttxt {
+  padding-top: 10px;
+  }
+
+.abtxtlg {
+  text-align: center;
+  color: #0000ff;
+  font-weight: bolder;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  color: #0000ff
+  
+}
+.abtxtsm {
+  text-align: center;
+  color: #0000ff;
+  font-family: 'Roboto', sans-serif;
+  width: 60%;
+  padding: 0px 5% 10px 5%;
+  }

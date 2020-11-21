@@ -17,23 +17,39 @@
                 <a class="navlink" href="contact.html" target="_blank">Contact</a>
             </div>  
         </nav>
-        <form action="/action_page.php">
-            <label for="fname">First name:</label>
-            <input type="text" id="fname" name="fname"><br><br>
-            <label for="lname">Last name:</label>
-            <input type="text" id="lname" name="lname"><br><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email"><br><br>
-            <label for="tel">Phone:</label>
-            <input type="tel" id="tel" name="tel"><br><br>
-            
-              <label for="intrest">Area of interest</label>
-              <select id="interest" name="interest">
+        <div class="subform">
+            <form action="/action_page.php">
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" name="fname" autofocus placeholder="First Name" ><br><br>
+                <label for="lname">Last name:</label>
+                <input type="text" id="lname" name="lname" placeholder="Last Name"><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="someone@somewhere.com"><br><br>
+                <label for="tel">Phone:</label>
+                <input type="tel" id="tel" name="tel" placeholder="559-555-5555"><br><br>
+                <label for="intrest">Area of interest</label>
+                <select id="interest" name="interest">
                 <option value="sun">Solar power</option>
                 <option value="siri">Home automation</option>
                 <option value="skynet">Skynet my shit up!</option>
-              </select><br><br>
-            <input type="submit" value="Submit">
-          </form> 
+                </select><br><br>
+                <input type="submit" value="Submit">
+            </form> 
+        </div>
+        <div class="exptxt">
+            <p>Contact information</p>
+            <p>You can fill out the form to the left and someone will contact you within 24 hours.  If you are having an urgent issue, please contact us using one of the methods below:
+            </br>Call or text - 559.555.6789
+        </br>Email - info@sunlit.com
+    </br>Support - support@sunlit.com</p>
+            <p>Visit our shop for inspiration</p>
+            <p>If you're interested in getting started with going off the grid and living a more comfortable and sustainable life, but don't know where to start, come by our workshop and see how the different technologies we offer let you live a seamless life, where technology doesn't just serve a purpose, it serves you.  Live in the comfort of a 24/7 monitored, AI controlled environment. Come see where what we offer can improve your life.
+            </br></br>
+                Workshop hours open to the public:</br>
+                Monday - Thursday, 10am to 4pm</p>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.6041985295456!2d-119.78794368536155!3d36.73206597923295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809460a5d033c593%3A0xaaddea0558f9026c!2sGeekwise%20Academy!5e0!3m2!1sen!2sus!4v1605761499884!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>        
     </body>  
 </html>
