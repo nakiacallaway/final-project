@@ -1,0 +1,338 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"646c3c011e",applicationID:"20827537"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Games | Sesame Street |  PBSKids</title>
+
+    <meta name="description" content="Play Sesame Street games with Elmo, Cookie Monster, Abby Cadabby, Grover, and more!">
+
+    
+    <script>
+        // Picture element HTML5 shiv
+        document.createElement( "picture" );
+    </script>
+
+    <script src="https://cms-tc.pbskids.org/sesamewebsite/resources/js/lib.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cms-tc.pbskids.org/sesamewebsite/resources/sass/styles.css"/>
+<link rel="stylesheet" type="text/css" href="https://cms-tc.pbskids.org/headband/resources/sass/producer-headband.css"/>
+<style type="text/css">
+/* Updated S47 base-state theme */
+
+                    body,
+            header nav.fixed ul {
+                background-image: url( https://cms-tc.pbskids.org/sesamestreet/Home_BackgroundTile_Mobile.png?mtime=20180420111510 );
+            }
+
+        
+                    .footer::before {
+                background-image: url( https://cms-tc.pbskids.org/sesamestreet/Home_BottomArt_Mobile.png?mtime=20180420111520 );
+            }
+        
+                    .footer .adults {
+                background-image: url( https://cms-tc.pbskids.org/sesamestreet/Home_BottomTile_180201_092511.png?mtime=20180201092510 );
+            }
+        
+                    body{
+background-size:contain;
+}
+.footer::before{
+background-repeat: repeat-x;
+}
+@media screen and (min-width: 48em) {
+
+.footer{ background: #d8fbff;}
+body{background-repeat: repeat-x; background-color: #d8fbff !important; background-size: auto;}
+}
+        
+        @media screen and (min-width: 27em) {
+
+                            .footer::before {
+                    background-image: url( https://cms-tc.pbskids.org/sesamestreet/Home_BottomArt.jpg?mtime=20180201092500 );
+                }
+            
+        }
+
+        @media screen and (min-width: 48em) {
+
+                            body {
+                    background-color: #000000;
+                }
+            
+                            body {
+                    background-image: url( https://cms-tc.pbskids.org/sesamestreet/Home_BackgroundTile.jpg?mtime=20180201092451 );
+                }
+            
+            
+            
+        }
+</style></head>
+
+<body class="allow-animation games-grid">
+<!-- START GLOBAL INCLUDE -->
+
+
+
+
+
+  
+<!-- Start Google Tag Manager -->
+<noscript>
+  <iframe src="//www.googletagmanager.com/ns.html?id=GTM-MR8JHB" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+   var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MR8JHB');
+</script>
+<!-- End Google Tag Manager -->
+
+
+<!-- Start Login Tracking and Google Analytics Tag -->
+<script type="text/javascript">
+  (function() {
+    var getCookie = function(c_name) {
+      if (document.cookie.length > 0) {
+        c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1) {
+          c_start = c_start + c_name.length + 1;
+          c_end = document.cookie.indexOf(";", c_start);
+          if (c_end == -1)
+            c_end = document.cookie.length;
+          return unescape(document.cookie.substring(c_start, c_end));
+        }
+      }
+      return "";
+    };
+
+
+    //-- Start Login Tracking ----
+    var pbskids_username = getCookie('pbskids.username');// Determines if user is logged in
+    var returning = getCookie('pbskids.returning');// Determines if account is new
+    var ua_codes = 'UA-3968507-1,UA-3999779-1,ET-3999779-2';
+    var ua_codes_list = ua_codes.split(',');
+    var login_info;
+    GA_customvar = {};
+
+    // Setup log in info custom variable string
+    if (pbskids_username) {
+      login_info = "l=1";
+      login_info += returning ? "&r=1" : "&r=0";
+    }
+    else {
+      login_info = "l=0&r=0";
+    }
+
+    for ( i = 0; i < ua_codes_list.length; i++) {
+      var cv_array = [["GO login tracking", login_info, 2]];
+      GA_customvar[ua_codes_list[i]] = cv_array;
+    }
+    //-- End Login Tracking ----
+
+
+    //-- Start Google Analytics Tag ----
+    var GA_jshost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    var station_letters = getCookie('pbskids.station');
+    window.GA_env = { ua_list: 'UA-3968507-1,UA-3999779-1,ET-3999779-2' };
+    window.GA_env.vars = station_letters ? { localized: 1, station: station_letters } : { localized: 0 };
+    document.write(unescape("%3Cscript src='" + GA_jshost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //-- End Google Analytics Tag ----
+
+  })();
+</script>
+<script src="https://cms-tc.pbskids.org/headband/resources/js/ga-current.js" type="text/javascript"></script>
+<!-- End Login Tracking and Google Analytics Tag -->
+
+
+<!-- Start comScore Tag -->
+<script>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "3005420" });
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script>
+<noscript>
+  <img src="https://b.scorecardresearch.com/p?c1=2&c2=3005420&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->
+
+
+<!-- Start Headband -->
+
+
+<div id="headband-container" class='producer-headband'>
+  <div class="headband-nav">
+    <div id="headband-user-block" class="logged-out">
+      <div class="header">
+        <a href="" class="avatar" rel="user" title="Visit Your Profile">
+          <h3>Visit Your Profile</h3>
+          <img alt="Your Avatar" src=""/>
+        </a>
+        <h2 class="user-name">
+          <a href="/profile/" target="_self"><em></em></a>
+          <a class="log-out" data-action="pbskids-login-sign-out">logout</a>
+        </h2>
+      </div>
+
+      <a class="sign-in" data-action="pbskids-login-sign-in"><em>Sign In</em> To PBS KIDS</a>
+    </div>
+
+    <div id="parents-message-bar">
+      <div class="wrap">
+        <div id="parents-messages"></div>
+      </div>
+      <div class="parents-bar-tooltips"></div>
+      <button id="squished-headband-toggle"></button>
+    </div>
+
+    <ul>
+      <li class="nav-item apps"><a href="https://pbskids.org/apps/">Apps</a></li>
+
+              <li class="nav-item shop hidden"><a href="https://shop.pbskids.org/?utm_source=PBS_kids&utm_medium=brandsite&utm_content=ShopButton&utm_campaign=homepage_091914">Shop</a></li>
+        <li class="nav-item parents hidden"><a href="https://pbskids.org/grownups/">Parents</a></li>
+
+                <script type="text/javascript">
+          if ( !(/NO_SHOP_LINK=/).test(document.cookie) ) {
+            document.querySelector('.nav-item.shop').classList.remove('hidden');
+            document.querySelector('.nav-item.parents').classList.remove('hidden');
+          }
+        </script>
+
+            
+      <li class="nav-item station" style="display:none;">
+        <a class="callsign" href="" title="" >
+          <span class="alt-call-letters"></span>
+          <img src=""/>
+        </a>
+      </li>
+
+      <li class="nav-item tv-times"><a href="https://pbskids.org/tv-times/">TV Times</a></li>
+      <li class="nav-item settings">
+        <button data-action="settings-trigger">Settings</button>
+      </li>
+    </ul>
+  </div>
+
+</div>
+<!-- End Headband -->
+
+  
+  
+
+<script type='text/javascript'>
+  var _loader_root = "https://cms-tc.pbskids.org/loader/resources/";
+  var _headband_js_root = "https://cms-tc.pbskids.org/headband/resources/js/";
+  var _shell_root = "";
+  var _sponsor_js_root = "https://cms-tc.pbskids.org/sponsorship/resources/js/"
+</script>
+
+<script type="text/javascript" src="https://cms-tc.pbskids.org/loader/resources/js/lib/PBS.KIDS.require.js" data-main="https://cms-tc.pbskids.org/loader/resources/js/loaders/producers.require.config.js"></script><!-- END GLOBAL INCLUDE -->
+
+<div class="container">
+
+    <header role="banner" class="header">
+        <div class="logos">
+            <h1 role="logo"><a href="/sesame/">Sesame Street</a></h1>
+            <h2><a href="https://pbskids.org">A part of PBSKids</a></h2>
+        </div>
+        <nav role="navigation">
+            <h2 class="show-for-sr">Main Menu</h2>
+            <ul>
+                <li class="videos">
+                    <a href="/sesame/videos">Videos</a>
+                </li>
+                <li class="games active">
+                    <a href="/sesame/games/">Games</a>
+                </li>
+                <li class="art">
+                    <a href="/sesame/art/">Art</a>
+                </li>
+            </ul>
+            <ul class="stickers">
+                <li class="sticker elmo"><a href="#">Elmo</a></li>
+                <li class="sticker cookie"><a href="#">Cookie Monster</a></li>
+                <li class="sticker ernie"><a href="#">Ernie</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+        
+    
+    
+    
+    
+        <section id="grid" class="grid desktop">
+            <p class="scroll-button left"><a href="#">See More</a></p>
+
+            <div class="grid-inner masked left right">
+                
+    <h2 class="show-for-sr">Sesame Street Games</h2>
+
+    <div class="column">
+
+    <article data-track-as="sesame/games/elmo-rositas-virtual-playdate/" class="tile tall game showonmobiledevices showondesktop" data-asset="elmo-rositas-virtual-playdate" data-type="game"><h3 class="tile-title"><a href="/sesame/games/elmo-rositas-virtual-playdate">Elmo &amp; Rosita&#039;s Virtual Playdate</a></h3><div class="tile-thumb"><picture><source media="(min-width: 768px)" srcset="https://cms-tc.pbskids.org/sesamestreet/_520x554_fit_center-center_70/PBS_Game_ElmoRositaVirtualPlaydate_Large_NEW.png?mtime=20201120092350 2x, https://cms-tc.pbskids.org/sesamestreet/_260x277_fit_center-center_70/PBS_Game_ElmoRositaVirtualPlaydate_Large_NEW.png?mtime=20201120092350 1x" /><source srcset="https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_ElmoRositaVirtualPlaydate_Small_NEW.png?mtime=20201120092401 2x, https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_ElmoRositaVirtualPlaydate_Small_NEW.png?mtime=20201120092401 1x" /><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_ElmoRositaVirtualPlaydate_Small_NEW.png?mtime=20201120092401" alt="Elmo &amp; Rosita&#039;s Virtual Playdate" /></picture></div><p class="desc">Description: Hop on a video call to play games like Follow the Leader, Freeze Dance, What’s Missing, and more!​ </p><p class="watch"><a href="/sesame/games/elmo-rositas-virtual-playdate">Play game</a></p></article><article data-track-as="sesame/games/a-job-for-me/" class="tile short game showonmobiledevices showondesktop" data-asset="a-job-for-me" data-type="game"><h3 class="tile-title"><a href="/sesame/games/a-job-for-me">A Job For Me</a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_AJobforMe_Small_NEW.png?mtime=20200618130323" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_AJobforMe_Small_NEW.png?mtime=20200618130323 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_AJobforMe_Small_NEW.png?mtime=20200618130323 2x" alt="A Job For Me"></div><p class="desc">Description: Explore the jobs that make up a community!​</p><p class="watch"><a href="/sesame/games/a-job-for-me">Play game</a></p></article></div><div class="column"><article data-track-as="sesame/games/cookie-monsters-foodie-truck/" class="tile short game " data-asset="cookie-monsters-foodie-truck" data-type="game"><h3 class="tile-title"><a href="/sesame/games/cookie-monsters-foodie-truck">Cookie Monster&#039;s Foodie Truck</a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_MonsterFoodieTruck_Small.png?mtime=20200914092754" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_MonsterFoodieTruck_Small.png?mtime=20200914092754 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_MonsterFoodieTruck_Small.png?mtime=20200914092754 2x" alt="Cookie Monster&#039;s Foodie Truck"></div><p class="desc">Description: Find out where different foods come from to make apple pies, tacos, and more with Cookie Monster and Gonger!</p><p class="watch"><a href="/sesame/games/cookie-monsters-foodie-truck">Play game</a></p></article><article data-track-as="sesame/games/abby-and-elmos-potty-plan/" class="tile tall game " data-asset="abby-and-elmos-potty-plan" data-type="game"><h3 class="tile-title"><a href="/sesame/games/abby-and-elmos-potty-plan">Abby and Elmo&#039;s Potty Plan!</a></h3><div class="tile-thumb"><picture><source media="(min-width: 768px)" srcset="https://cms-tc.pbskids.org/sesamestreet/_520x554_fit_center-center_70/PBS_Game_PottyPlan_Large.png?mtime=20200914092839 2x, https://cms-tc.pbskids.org/sesamestreet/_260x277_fit_center-center_70/PBS_Game_PottyPlan_Large.png?mtime=20200914092839 1x" /><source srcset="https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_PottyPlan_Small.png?mtime=20200914092843 2x, https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_PottyPlan_Small.png?mtime=20200914092843 1x" /><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_PottyPlan_Small.png?mtime=20200914092843" alt="Abby and Elmo&#039;s Potty Plan!" /></picture></div><p class="desc">Description: Help Abby and Elmo go potty!</p><p class="watch"><a href="/sesame/games/abby-and-elmos-potty-plan">Play game</a></p></article></div><div class="column"><article data-track-as="sesame/games/abby-and-rositas-wand-chase/" class="tile tall game " data-asset="abby-and-rositas-wand-chase" data-type="game"><h3 class="tile-title"><a href="/sesame/games/abby-and-rositas-wand-chase">Abby and Rosita&#039;s Wand Chase</a></h3><div class="tile-thumb"><picture><source media="(min-width: 768px)" srcset="https://cms-tc.pbskids.org/sesamestreet/_520x554_fit_center-center_70/PBS_Game_AbbyRositaWandChase_Big.png?mtime=20191101083721 2x, https://cms-tc.pbskids.org/sesamestreet/_260x277_fit_center-center_70/PBS_Game_AbbyRositaWandChase_Big.png?mtime=20191101083721 1x" /><source srcset="https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_AbbyRositaWandChase_Small.png?mtime=20191101083715 2x, https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_AbbyRositaWandChase_Small.png?mtime=20191101083715 1x" /><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_AbbyRositaWandChase_Small.png?mtime=20191101083715" alt="Abby and Rosita&#039;s Wand Chase" /></picture></div><p class="desc">Description: Join Abby and Rosita on an adventure and learn about new people, places, and things!</p><p class="watch"><a href="/sesame/games/abby-and-rositas-wand-chase">Play game</a></p></article><article data-track-as="sesame/games/letter-dance-party/" class="tile short game " data-asset="letter-dance-party" data-type="game"><h3 class="tile-title"><a href="/sesame/games/letter-dance-party">Letter Dance Party</a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_LetterDanceParty_Small.png?mtime=20190204103100" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_LetterDanceParty_Small.png?mtime=20190204103100 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_LetterDanceParty_Small.png?mtime=20190204103100 2x" alt="Letter Dance Party"></div><p class="desc">Description: In this game, your child can practice letter recognition and dance with Big Bird and Snuffy. </p><p class="watch"><a href="/sesame/games/letter-dance-party">Play game</a></p></article></div><div class="column"><article data-track-as="sesame/games/seasons-spinner/" class="tile short game " data-asset="seasons-spinner" data-type="game"><h3 class="tile-title"><a href="/sesame/games/seasons-spinner">Seasons Spinner</a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_SeasonsFall_Small.png?mtime=20180904090339" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_SeasonsFall_Small.png?mtime=20180904090339 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_SeasonsFall_Small.png?mtime=20180904090339 2x" alt="Seasons Spinner"></div><p class="desc">Description: Spin up some fun with Abby and Rudy while exploring and learning about all four seasons…winter, spring, summer, and fall!</p><p class="watch"><a href="/sesame/games/seasons-spinner">Play game</a></p></article><article data-track-as="sesame/games/show-me-the-cookies/" class="tile short game " data-asset="show-me-the-cookies" data-type="game"><h3 class="tile-title"><a href="/sesame/games/show-me-the-cookies">Show Me The Cookies</a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_ShowMeTheCookies_Small.png?mtime=20191101083757" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_ShowMeTheCookies_Small.png?mtime=20191101083757 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_ShowMeTheCookies_Small.png?mtime=20191101083757 2x" alt="Show Me The Cookies"></div><p class="desc">Description: In this game, your child joins Cookie Monster for some game show fun while developing reasoning skills. </p><p class="watch"><a href="/sesame/games/show-me-the-cookies">Play game</a></p></article><article data-track-as="sesame/games/monster-music/" class="tile short game " data-asset="monster-music" data-type="game"><h3 class="tile-title"><a href="/sesame/games/monster-music">Monster Music </a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_MonsterMusic_Small.png?mtime=20170913153511" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_MonsterMusic_Small.png?mtime=20170913153511 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_MonsterMusic_Small.png?mtime=20170913153511 2x" alt="Monster Music "></div><p class="desc">Description: Make music with the Sesame Street friends!</p><p class="watch"><a href="/sesame/games/monster-music">Play game</a></p></article></div><div class="column"><article data-track-as="sesame/games/ready-set-grow/" class="tile short game showonmobiledevices showondesktop" data-asset="ready-set-grow" data-type="game"><h3 class="tile-title"><a href="/sesame/games/ready-set-grow">Ready, Set, Grow!</a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_ReadySetGrow_Small.png?mtime=20170913144259" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_ReadySetGrow_Small.png?mtime=20170913144259 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_ReadySetGrow_Small.png?mtime=20170913144259 2x" alt="Ready, Set, Grow!"></div><p class="desc">Description: Plant seeds and tend to a garden with Abby and Elmo!</p><p class="watch"><a href="/sesame/games/ready-set-grow">Play game</a></p></article><article data-track-as="sesame/games/elmos-world-games/" class="tile tall game " data-asset="elmos-world-games" data-type="game"><h3 class="tile-title"><a href="/sesame/games/elmos-world-games">Elmo&#039;s World Games</a></h3><div class="tile-thumb"><picture><source media="(min-width: 768px)" srcset="https://cms-tc.pbskids.org/sesamestreet/_520x554_fit_center-center_70/PBS_Game_ElmosWorldGames_FALL_Big.png?mtime=20180904094657 2x, https://cms-tc.pbskids.org/sesamestreet/_260x277_fit_center-center_70/PBS_Game_ElmosWorldGames_FALL_Big.png?mtime=20180904094657 1x" /><source srcset="https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_ElmosWorldGames_FALL_Small_190905_141435.png?mtime=20190905141435 2x, https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_ElmosWorldGames_FALL_Small_190905_141435.png?mtime=20190905141435 1x" /><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_ElmosWorldGames_FALL_Small_190905_141435.png?mtime=20190905141435" alt="Elmo&#039;s World Games" /></picture></div><p class="desc">Description: Welcome to Elmo&#039;s World! Play six different mini-games in Elmo&#039;s room.</p><p class="watch"><a href="/sesame/games/elmos-world-games">Play game</a></p></article></div><div class="column"><article data-track-as="sesame/games/super-salad-diner/" class="tile tall game " data-asset="super-salad-diner" data-type="game"><h3 class="tile-title"><a href="/sesame/games/super-salad-diner">Super Salad Diner</a></h3><div class="tile-thumb"><picture><source media="(min-width: 768px)" srcset="https://cms-tc.pbskids.org/sesamestreet/_520x554_fit_center-center_70/PBS_Game_SuperSaladDiner_Big.png?mtime=20170913144359 2x, https://cms-tc.pbskids.org/sesamestreet/_260x277_fit_center-center_70/PBS_Game_SuperSaladDiner_Big.png?mtime=20170913144359 1x" /><source srcset="https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_SuperSaladDiner_Small_170915_102501.png?mtime=20170915102501 2x, https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_SuperSaladDiner_Small_170915_102501.png?mtime=20170915102501 1x" /><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_SuperSaladDiner_Small_170915_102501.png?mtime=20170915102501" alt="Super Salad Diner" /></picture></div><p class="desc">Description: Keep your customers happy in this restaurant game!</p><p class="watch"><a href="/sesame/games/super-salad-diner">Play game</a></p></article><article data-track-as="sesame/games/story-book-builder/" class="tile short game " data-asset="story-book-builder" data-type="game"><h3 class="tile-title"><a href="/sesame/games/story-book-builder">Story Book Builder</a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_StoryBookBuilder_Small_170915_102408.png?mtime=20170915102409" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_StoryBookBuilder_Small_170915_102408.png?mtime=20170915102409 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_StoryBookBuilder_Small_170915_102408.png?mtime=20170915102409 2x" alt="Story Book Builder"></div><p class="desc">Description: Create stories with Elmo, Abby Cadabby, and Cookie Monster!</p><p class="watch"><a href="/sesame/games/story-book-builder">Play game</a></p></article></div><div class="column"><article data-track-as="sesame/games/grovers-rhyme-time/" class="tile short game showonmobiledevices showondesktop" data-asset="grovers-rhyme-time" data-type="game"><h3 class="tile-title"><a href="/sesame/games/grovers-rhyme-time">Grover&#039;s Rhyme Time</a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_RhymeTime_Small.png?mtime=20170913145218" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_RhymeTime_Small.png?mtime=20170913145218 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_RhymeTime_Small.png?mtime=20170913145218 2x" alt="Grover&#039;s Rhyme Time"></div><p class="desc">Description: Travel around the world and make up dances with Grover.</p><p class="watch"><a href="/sesame/games/grovers-rhyme-time">Play game</a></p></article><article data-track-as="sesame/games/ernies-dinosaur-daycare/" class="tile short game " data-asset="ernies-dinosaur-daycare" data-type="game"><h3 class="tile-title"><a href="/sesame/games/ernies-dinosaur-daycare">Ernie&#039;s Dinosaur Daycare </a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_DinosaurDaycare_Small.png?mtime=20170913145010" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_DinosaurDaycare_Small.png?mtime=20170913145010 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_DinosaurDaycare_Small.png?mtime=20170913145010 2x" alt="Ernie&#039;s Dinosaur Daycare "></div><p class="desc">Description: Imagine you can go back in time and play with dinosaurs!</p><p class="watch"><a href="/sesame/games/ernies-dinosaur-daycare">Play game</a></p></article><article data-track-as="sesame/games/dress-up-time/" class="tile short game showonmobiledevices showondesktop gamerequireswebaudio gamerequirescanvas" data-asset="dress-up-time" data-type="game"><h3 class="tile-title"><a href="/sesame/games/dress-up-time">Dress Up Time</a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_DressUpTime_Small_180904_085947.png?mtime=20180904085947" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_DressUpTime_Small_180904_085947.png?mtime=20180904085947 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_DressUpTime_Small_180904_085947.png?mtime=20180904085947 2x" alt="Dress Up Time"></div><p class="desc">Description: Play Dress-up with Elmo and Abby!</p><p class="watch"><a href="/sesame/games/dress-up-time">Play game</a></p></article></div><div class="column"><article data-track-as="sesame/games/elmos-school-friends/" class="tile short game " data-asset="elmos-school-friends" data-type="game"><h3 class="tile-title"><a href="/sesame/games/elmos-school-friends">Elmo&#039;s School Friends</a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_ElmosSchoolFriends_Small_170915_102144.png?mtime=20170915102145" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_ElmosSchoolFriends_Small_170915_102144.png?mtime=20170915102145 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_ElmosSchoolFriends_Small_170915_102144.png?mtime=20170915102145 2x" alt="Elmo&#039;s School Friends"></div><p class="desc">Description: Play with Elmo and his friends at school.</p><p class="watch"><a href="/sesame/games/elmos-school-friends">Play game</a></p></article><article data-track-as="sesame/games/hungry-games/" class="tile short game showonmobiledevices showondesktop" data-asset="hungry-games" data-type="game"><h3 class="tile-title"><a href="/sesame/games/hungry-games">Hungry Games </a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_HungryGames_Small.png?mtime=20170913145813" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_HungryGames_Small.png?mtime=20170913145813 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_HungryGames_Small.png?mtime=20170913145813 2x" alt="Hungry Games "></div><p class="desc">Description: Help Cookie Monster compete in the Hungry Games!</p><p class="watch"><a href="/sesame/games/hungry-games">Play game</a></p></article><article data-track-as="sesame/games/abbys-sandbox-search/" class="tile short game showonmobiledevices showondesktop gamerequireswebaudio gamerequirescanvas" data-asset="abbys-sandbox-search" data-type="game"><h3 class="tile-title"><a href="/sesame/games/abbys-sandbox-search">Abby&#039;s Sandbox Search</a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_AbbysSandboxSearch_Small.png?mtime=20170913145515" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_AbbysSandboxSearch_Small.png?mtime=20170913145515 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_AbbysSandboxSearch_Small.png?mtime=20170913145515 2x" alt="Abby&#039;s Sandbox Search"></div><p class="desc">Description: Help Abby find the objects hidden in the sand!</p><p class="watch"><a href="/sesame/games/abbys-sandbox-search">Play game</a></p></article></div><div class="column"><article data-track-as="sesame/games/lord-of-the-crumbs/" class="tile short game showonmobiledevices showondesktop" data-asset="lord-of-the-crumbs" data-type="game"><h3 class="tile-title"><a href="/sesame/games/lord-of-the-crumbs">Lord of the Crumbs </a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_LordoftheCrumbs_Small.png?mtime=20170913145703" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_LordoftheCrumbs_Small.png?mtime=20170913145703 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_LordoftheCrumbs_Small.png?mtime=20170913145703 2x" alt="Lord of the Crumbs "></div><p class="desc">Description: Help Cookie Monster find his cookie recipe!</p><p class="watch"><a href="/sesame/games/lord-of-the-crumbs">Play game</a></p></article><article data-track-as="sesame/games/cookies-of-the-caribbean/" class="tile short game showonmobiledevices showondesktop" data-asset="cookies-of-the-caribbean" data-type="game"><h3 class="tile-title"><a href="/sesame/games/cookies-of-the-caribbean">Cookies of the Caribbean</a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_CookiesoftheCarribbean_Small.png?mtime=20170913153228" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_CookiesoftheCarribbean_Small.png?mtime=20170913153228 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_CookiesoftheCarribbean_Small.png?mtime=20170913153228 2x" alt="Cookies of the Caribbean"></div><p class="desc">Description: Listen carefully and follow directions to help Cookie Monster!</p><p class="watch"><a href="/sesame/games/cookies-of-the-caribbean">Play game</a></p></article><article data-track-as="sesame/games/the-cookie-games/" class="tile short game " data-asset="the-cookie-games" data-type="game"><h3 class="tile-title"><a href="/sesame/games/the-cookie-games">The Cookie Games</a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_CookieGames_Small_170915_101936.png?mtime=20170915101937" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_CookieGames_Small_170915_101936.png?mtime=20170915101937 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_CookieGames_Small_170915_101936.png?mtime=20170915101937 2x" alt="The Cookie Games"></div><p class="desc">Description: Compete in ring spin, hurdles, and archery with Cookie Monster!</p><p class="watch"><a href="/sesame/games/the-cookie-games">Play game</a></p></article></div><div class="column"><article data-track-as="sesame/games/grovers-winter-games/" class="tile short game showonmobiledevices showondesktop gamerequireswebaudio" data-asset="grovers-winter-games" data-type="game"><h3 class="tile-title"><a href="/sesame/games/grovers-winter-games">Grover&#039;s Winter Games </a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_GroversWinterGames_Small.png?mtime=20170913145620" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_GroversWinterGames_Small.png?mtime=20170913145620 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_GroversWinterGames_Small.png?mtime=20170913145620 2x" alt="Grover&#039;s Winter Games "></div><p class="desc">Description: Go skiing, snow boarding and ice skating with Grover!</p><p class="watch"><a href="/sesame/games/grovers-winter-games">Play game</a></p></article><article data-track-as="sesame/games/oscars-rotten-ride/" class="tile short game showonmobiledevices showondesktop gamerequireswebaudio gamerequirescanvas" data-asset="oscars-rotten-ride" data-type="game"><h3 class="tile-title"><a href="/sesame/games/oscars-rotten-ride">Oscar&#039;s Rotten Ride </a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_OscarsRottenRide_Small.png?mtime=20170913144904" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_OscarsRottenRide_Small.png?mtime=20170913144904 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_OscarsRottenRide_Small.png?mtime=20170913144904 2x" alt="Oscar&#039;s Rotten Ride "></div><p class="desc">Description: Help Oscar collect all the rotten trash!</p><p class="watch"><a href="/sesame/games/oscars-rotten-ride">Play game</a></p></article><article data-track-as="sesame/games/detective-elmo-the-cookie-case/" class="tile short game " data-asset="detective-elmo-the-cookie-case" data-type="game"><h3 class="tile-title"><a href="/sesame/games/detective-elmo-the-cookie-case">Detective Elmo: The Cookie Case </a></h3><div class="tile-thumb"><img src="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_CookieCase_Small.png?mtime=20170913145059" srcset="https://cms-tc.pbskids.org/sesamestreet/_260x139_fit_center-center_70/PBS_Game_CookieCase_Small.png?mtime=20170913145059 1x, https://cms-tc.pbskids.org/sesamestreet/_520x278_fit_center-center_70/PBS_Game_CookieCase_Small.png?mtime=20170913145059 2x" alt="Detective Elmo: The Cookie Case "></div><p class="desc">Description: Help Elmo solve the Cookie Case!</p><p class="watch"><a href="/sesame/games/detective-elmo-the-cookie-case">Play game</a></p></article></div>
+
+            </div>
+
+            <p class="scroll-button right"><a href="#">See More</a></p>
+        </section>
+
+    
+    <!-- sticky footer -->
+    <div class="push"></div>
+    <div class="modal-overlay"></div>
+
+    <!-- Just for themes -->
+    <div class="ornaments">
+        <div class="theme-ornament ornament-three"></div>
+        <div class="theme-ornament ornament-two"></div>
+        <div class="theme-ornament ornament-one"></div>
+    </div>
+
+</div><!-- .container -->
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="adults">
+                <p class="sesame-org"><a href="http://www.sesamestreet.org/">Continue the fun! Visit SesameStreet.org</a></p>
+                <p class="tv-times"><a href="https://pbskids.org/tv-times/">View the TV Schedule for Listings Near You</a></p>
+            </div>
+            <div class="sponsors">
+                <h2 class="show-for-sr">Sponsors</h2>
+                <div class="sponsor sesameworkshop">
+                  <h3 class="sponsors-title">Produced by: <a href="http://www.sesameworkshop.org/">Sesame Workshop</a></h3>
+                </div>
+
+                <div class="sponsor companies">
+                    <h3 class="sponsors-title">With Support From:</h3>
+                    <ul>
+                        <li class="beaches"><a href="http://www.beaches.com/?WT.mc_id=SesameStreet_PBS_June09">Beaches</a></li>
+                        <li class="chrysler"><a href="https://www.chrysler.com/">Chrysler Pacifica</a></li>
+                        <li class="education"><a href="http://www.ed.gov/">Departmant of Education</a></li>
+                        <li class="cpb"><a href="http://www.cpb.org/">Center for Public Broadcasting</a></li>
+                        <li class="seaworld"><a href="https://seaworldentertainment.com/">SeaWorld</a></li>
+                        <li class="blue-lizard"><a href="https://www.bluelizard.net/pages/safeinthesun/">Blue Lizard</a></li>
+                    </ul>
+                </div>
+
+                <p class="legal">&copy; 2020 Sesame Workshop. “Sesame Street” and its logo are trademarks of Sesame Workshop. All rights reserved.</p>
+                <p class="privacy"><a href="https://pbskids.org/privacy/">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+<script src="https://www-tc.pbskids.org/pbsk/video/lib/jquery.pbskidsvideo.min-latest.js"></script>
+<script src="https://cms-tc.pbskids.org/sesamewebsite/resources/js/sesamestreet.min.js"></script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"646c3c011e","applicationID":"20827537","transactionName":"Z1NQZEtSCEcAVEQPWF4Zc1NNWglaTnRCB1FEamZVVEMKVRVSQyVYXkJAX1VfA0ZORVUIU1VE","queueTime":0,"applicationTime":492,"atts":"SxRTEgNIG0k=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

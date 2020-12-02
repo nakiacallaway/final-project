@@ -17,7 +17,7 @@ a:hover {
 h1 {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
-  color: #0000ff;
+  color: #00b;
 }
 
 i {
@@ -29,7 +29,7 @@ i {
 }
 nav {
   height: 50px;
-  background-color: #00f
+  background-color: #00b;
 }
 .navi {
   padding: 15px;
@@ -41,7 +41,7 @@ nav {
 .month {
   padding: 3px 15px;
   width: 100%;
-  background: #0000ff;
+  background: #00b;
   text-align: center;
   }
 
@@ -148,11 +148,11 @@ select {
 .button {
   background-color: white; 
   color: black; 
-  border: 2px solid #00f;
+  border: 2px solid #00b;
 }
 
 .button:hover {
-  background-color: #00f;
+  background-color: #00b;
   color: white;
 }
 
@@ -209,7 +209,7 @@ select {
 footer {
   text-align: center;
   height: 100px;
-  background-color: #00f;
+  background-color: #00b;
   color: white;
 }
 /* index page */
